@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option go_package = "/g-vote";
+package g_vote;
+
+service Vote {
+    rpc CreateVote(CreateQuery) returns (CreateResponse);
+    rpc SearchVote(SearchQuery) returns (SearchResponse);
+    rpc SelectVote(SelectQuery) returns (SelectResponse);
+}
+
+message CreateQuery {
+    uint64 Board_id = 1;
+	string Title = 2;
+	string Description = 3;
+	repeated string Vote_Items = 4;
+	string Deadline = 5;
+}
+
+message CreateResponse {
+    string Vote_id = 1;
+}
+
+message SearchQuery {
+    uint64 Board_id  = 1;
+	string Vote_id = 2;
+}
+
+message SearchResponse {
+    string User_id = 1;
+    string Title = 2;
+    string Description = 3;
+    map<int32, string> Vote_items = 4;
+    string Deadline = 5;
+    bool Voted = 6;
+    map<int32, int32> Vote_num = 7;
+}
+
+message SelectQuery {
+    uint64 Board_id = 1;
+    string Vote_id = 2;
+    int32 Vote_item_id = 3;
+}
+
+message SelectResponse {
+    bool Ok = 1;
+    string Msg = 2;
+}
