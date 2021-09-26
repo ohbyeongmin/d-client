@@ -7,6 +7,7 @@ service Vote {
     rpc CreateVote(CreateQuery) returns (CreateResponse);
     rpc SearchVote(SearchQuery) returns (SearchResponse);
     rpc SelectVote(SelectQuery) returns (SelectResponse);
+    rpc MyVotes(MyVotesQuery) returns (MyVotesResponse);
 }
 
 message CreateQuery {
@@ -45,4 +46,16 @@ message SelectQuery {
 message SelectResponse {
     bool Ok = 1;
     string Msg = 2;
+}
+
+message MyVotesQuery {
+}
+
+message MyVotesField {
+    int64 Board_id = 1;
+    string Vote_id = 2;
+}
+
+message MyVotesResponse {
+    repeated MyVotesField My_votes = 1;
 }

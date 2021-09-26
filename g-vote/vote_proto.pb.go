@@ -418,6 +418,146 @@ func (x *SelectResponse) GetMsg() string {
 	return ""
 }
 
+type MyVotesQuery struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MyVotesQuery) Reset() {
+	*x = MyVotesQuery{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vote_proto_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MyVotesQuery) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MyVotesQuery) ProtoMessage() {}
+
+func (x *MyVotesQuery) ProtoReflect() protoreflect.Message {
+	mi := &file_vote_proto_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MyVotesQuery.ProtoReflect.Descriptor instead.
+func (*MyVotesQuery) Descriptor() ([]byte, []int) {
+	return file_vote_proto_proto_rawDescGZIP(), []int{6}
+}
+
+type MyVotesField struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	BoardId int64  `protobuf:"varint,1,opt,name=Board_id,json=BoardId,proto3" json:"Board_id,omitempty"`
+	VoteId  string `protobuf:"bytes,2,opt,name=Vote_id,json=VoteId,proto3" json:"Vote_id,omitempty"`
+}
+
+func (x *MyVotesField) Reset() {
+	*x = MyVotesField{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vote_proto_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MyVotesField) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MyVotesField) ProtoMessage() {}
+
+func (x *MyVotesField) ProtoReflect() protoreflect.Message {
+	mi := &file_vote_proto_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MyVotesField.ProtoReflect.Descriptor instead.
+func (*MyVotesField) Descriptor() ([]byte, []int) {
+	return file_vote_proto_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *MyVotesField) GetBoardId() int64 {
+	if x != nil {
+		return x.BoardId
+	}
+	return 0
+}
+
+func (x *MyVotesField) GetVoteId() string {
+	if x != nil {
+		return x.VoteId
+	}
+	return ""
+}
+
+type MyVotesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	MyVotes []*MyVotesField `protobuf:"bytes,1,rep,name=My_votes,json=MyVotes,proto3" json:"My_votes,omitempty"`
+}
+
+func (x *MyVotesResponse) Reset() {
+	*x = MyVotesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vote_proto_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MyVotesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MyVotesResponse) ProtoMessage() {}
+
+func (x *MyVotesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_vote_proto_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MyVotesResponse.ProtoReflect.Descriptor instead.
+func (*MyVotesResponse) Descriptor() ([]byte, []int) {
+	return file_vote_proto_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *MyVotesResponse) GetMyVotes() []*MyVotesField {
+	if x != nil {
+		return x.MyVotes
+	}
+	return nil
+}
+
 var File_vote_proto_proto protoreflect.FileDescriptor
 
 var file_vote_proto_proto_rawDesc = []byte{
@@ -474,20 +614,33 @@ var file_vote_proto_proto_rawDesc = []byte{
 	0x64, 0x22, 0x32, 0x0a, 0x0e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x4f, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
 	0x02, 0x4f, 0x6b, 0x12, 0x10, 0x0a, 0x03, 0x4d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x03, 0x4d, 0x73, 0x67, 0x32, 0xb7, 0x01, 0x0a, 0x04, 0x56, 0x6f, 0x74, 0x65, 0x12, 0x39,
-	0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x6f, 0x74, 0x65, 0x12, 0x13, 0x2e, 0x67,
-	0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x51, 0x75, 0x65, 0x72,
-	0x79, 0x1a, 0x16, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x0a, 0x53, 0x65, 0x61,
-	0x72, 0x63, 0x68, 0x56, 0x6f, 0x74, 0x65, 0x12, 0x13, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65,
-	0x2e, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x51, 0x75, 0x65, 0x72, 0x79, 0x1a, 0x16, 0x2e, 0x67,
-	0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x0a, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x56, 0x6f,
-	0x74, 0x65, 0x12, 0x13, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x53, 0x65, 0x6c, 0x65,
-	0x63, 0x74, 0x51, 0x75, 0x65, 0x72, 0x79, 0x1a, 0x16, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65,
-	0x2e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
-	0x09, 0x5a, 0x07, 0x2f, 0x67, 0x2d, 0x76, 0x6f, 0x74, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x52, 0x03, 0x4d, 0x73, 0x67, 0x22, 0x0e, 0x0a, 0x0c, 0x4d, 0x79, 0x56, 0x6f, 0x74, 0x65, 0x73,
+	0x51, 0x75, 0x65, 0x72, 0x79, 0x22, 0x42, 0x0a, 0x0c, 0x4d, 0x79, 0x56, 0x6f, 0x74, 0x65, 0x73,
+	0x46, 0x69, 0x65, 0x6c, 0x64, 0x12, 0x19, 0x0a, 0x08, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x64,
+	0x12, 0x17, 0x0a, 0x07, 0x56, 0x6f, 0x74, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x56, 0x6f, 0x74, 0x65, 0x49, 0x64, 0x22, 0x42, 0x0a, 0x0f, 0x4d, 0x79, 0x56,
+	0x6f, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x08,
+	0x4d, 0x79, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14,
+	0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x4d, 0x79, 0x56, 0x6f, 0x74, 0x65, 0x73, 0x46,
+	0x69, 0x65, 0x6c, 0x64, 0x52, 0x07, 0x4d, 0x79, 0x56, 0x6f, 0x74, 0x65, 0x73, 0x32, 0xf1, 0x01,
+	0x0a, 0x04, 0x56, 0x6f, 0x74, 0x65, 0x12, 0x39, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x56, 0x6f, 0x74, 0x65, 0x12, 0x13, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x51, 0x75, 0x65, 0x72, 0x79, 0x1a, 0x16, 0x2e, 0x67, 0x5f, 0x76, 0x6f,
+	0x74, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x39, 0x0a, 0x0a, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x56, 0x6f, 0x74, 0x65, 0x12,
+	0x13, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x1a, 0x16, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x53, 0x65,
+	0x61, 0x72, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x39, 0x0a, 0x0a,
+	0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x56, 0x6f, 0x74, 0x65, 0x12, 0x13, 0x2e, 0x67, 0x5f, 0x76,
+	0x6f, 0x74, 0x65, 0x2e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x51, 0x75, 0x65, 0x72, 0x79, 0x1a,
+	0x16, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x53, 0x65, 0x6c, 0x65, 0x63, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x38, 0x0a, 0x07, 0x4d, 0x79, 0x56, 0x6f, 0x74,
+	0x65, 0x73, 0x12, 0x14, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74, 0x65, 0x2e, 0x4d, 0x79, 0x56, 0x6f,
+	0x74, 0x65, 0x73, 0x51, 0x75, 0x65, 0x72, 0x79, 0x1a, 0x17, 0x2e, 0x67, 0x5f, 0x76, 0x6f, 0x74,
+	0x65, 0x2e, 0x4d, 0x79, 0x56, 0x6f, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x42, 0x09, 0x5a, 0x07, 0x2f, 0x67, 0x2d, 0x76, 0x6f, 0x74, 0x65, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -502,31 +655,37 @@ func file_vote_proto_proto_rawDescGZIP() []byte {
 	return file_vote_proto_proto_rawDescData
 }
 
-var file_vote_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_vote_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_vote_proto_proto_goTypes = []interface{}{
-	(*CreateQuery)(nil),    // 0: g_vote.CreateQuery
-	(*CreateResponse)(nil), // 1: g_vote.CreateResponse
-	(*SearchQuery)(nil),    // 2: g_vote.SearchQuery
-	(*SearchResponse)(nil), // 3: g_vote.SearchResponse
-	(*SelectQuery)(nil),    // 4: g_vote.SelectQuery
-	(*SelectResponse)(nil), // 5: g_vote.SelectResponse
-	nil,                    // 6: g_vote.SearchResponse.VoteItemsEntry
-	nil,                    // 7: g_vote.SearchResponse.VoteNumEntry
+	(*CreateQuery)(nil),     // 0: g_vote.CreateQuery
+	(*CreateResponse)(nil),  // 1: g_vote.CreateResponse
+	(*SearchQuery)(nil),     // 2: g_vote.SearchQuery
+	(*SearchResponse)(nil),  // 3: g_vote.SearchResponse
+	(*SelectQuery)(nil),     // 4: g_vote.SelectQuery
+	(*SelectResponse)(nil),  // 5: g_vote.SelectResponse
+	(*MyVotesQuery)(nil),    // 6: g_vote.MyVotesQuery
+	(*MyVotesField)(nil),    // 7: g_vote.MyVotesField
+	(*MyVotesResponse)(nil), // 8: g_vote.MyVotesResponse
+	nil,                     // 9: g_vote.SearchResponse.VoteItemsEntry
+	nil,                     // 10: g_vote.SearchResponse.VoteNumEntry
 }
 var file_vote_proto_proto_depIdxs = []int32{
-	6, // 0: g_vote.SearchResponse.Vote_items:type_name -> g_vote.SearchResponse.VoteItemsEntry
-	7, // 1: g_vote.SearchResponse.Vote_num:type_name -> g_vote.SearchResponse.VoteNumEntry
-	0, // 2: g_vote.Vote.CreateVote:input_type -> g_vote.CreateQuery
-	2, // 3: g_vote.Vote.SearchVote:input_type -> g_vote.SearchQuery
-	4, // 4: g_vote.Vote.SelectVote:input_type -> g_vote.SelectQuery
-	1, // 5: g_vote.Vote.CreateVote:output_type -> g_vote.CreateResponse
-	3, // 6: g_vote.Vote.SearchVote:output_type -> g_vote.SearchResponse
-	5, // 7: g_vote.Vote.SelectVote:output_type -> g_vote.SelectResponse
-	5, // [5:8] is the sub-list for method output_type
-	2, // [2:5] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	9,  // 0: g_vote.SearchResponse.Vote_items:type_name -> g_vote.SearchResponse.VoteItemsEntry
+	10, // 1: g_vote.SearchResponse.Vote_num:type_name -> g_vote.SearchResponse.VoteNumEntry
+	7,  // 2: g_vote.MyVotesResponse.My_votes:type_name -> g_vote.MyVotesField
+	0,  // 3: g_vote.Vote.CreateVote:input_type -> g_vote.CreateQuery
+	2,  // 4: g_vote.Vote.SearchVote:input_type -> g_vote.SearchQuery
+	4,  // 5: g_vote.Vote.SelectVote:input_type -> g_vote.SelectQuery
+	6,  // 6: g_vote.Vote.MyVotes:input_type -> g_vote.MyVotesQuery
+	1,  // 7: g_vote.Vote.CreateVote:output_type -> g_vote.CreateResponse
+	3,  // 8: g_vote.Vote.SearchVote:output_type -> g_vote.SearchResponse
+	5,  // 9: g_vote.Vote.SelectVote:output_type -> g_vote.SelectResponse
+	8,  // 10: g_vote.Vote.MyVotes:output_type -> g_vote.MyVotesResponse
+	7,  // [7:11] is the sub-list for method output_type
+	3,  // [3:7] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_vote_proto_proto_init() }
@@ -607,6 +766,42 @@ func file_vote_proto_proto_init() {
 				return nil
 			}
 		}
+		file_vote_proto_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MyVotesQuery); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_vote_proto_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MyVotesField); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_vote_proto_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MyVotesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -614,7 +809,7 @@ func file_vote_proto_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_vote_proto_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -643,6 +838,7 @@ type VoteClient interface {
 	CreateVote(ctx context.Context, in *CreateQuery, opts ...grpc.CallOption) (*CreateResponse, error)
 	SearchVote(ctx context.Context, in *SearchQuery, opts ...grpc.CallOption) (*SearchResponse, error)
 	SelectVote(ctx context.Context, in *SelectQuery, opts ...grpc.CallOption) (*SelectResponse, error)
+	MyVotes(ctx context.Context, in *MyVotesQuery, opts ...grpc.CallOption) (*MyVotesResponse, error)
 }
 
 type voteClient struct {
@@ -680,11 +876,21 @@ func (c *voteClient) SelectVote(ctx context.Context, in *SelectQuery, opts ...gr
 	return out, nil
 }
 
+func (c *voteClient) MyVotes(ctx context.Context, in *MyVotesQuery, opts ...grpc.CallOption) (*MyVotesResponse, error) {
+	out := new(MyVotesResponse)
+	err := c.cc.Invoke(ctx, "/g_vote.Vote/MyVotes", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VoteServer is the server API for Vote service.
 type VoteServer interface {
 	CreateVote(context.Context, *CreateQuery) (*CreateResponse, error)
 	SearchVote(context.Context, *SearchQuery) (*SearchResponse, error)
 	SelectVote(context.Context, *SelectQuery) (*SelectResponse, error)
+	MyVotes(context.Context, *MyVotesQuery) (*MyVotesResponse, error)
 }
 
 // UnimplementedVoteServer can be embedded to have forward compatible implementations.
@@ -699,6 +905,9 @@ func (*UnimplementedVoteServer) SearchVote(context.Context, *SearchQuery) (*Sear
 }
 func (*UnimplementedVoteServer) SelectVote(context.Context, *SelectQuery) (*SelectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SelectVote not implemented")
+}
+func (*UnimplementedVoteServer) MyVotes(context.Context, *MyVotesQuery) (*MyVotesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MyVotes not implemented")
 }
 
 func RegisterVoteServer(s *grpc.Server, srv VoteServer) {
@@ -759,6 +968,24 @@ func _Vote_SelectVote_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Vote_MyVotes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MyVotesQuery)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VoteServer).MyVotes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/g_vote.Vote/MyVotes",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VoteServer).MyVotes(ctx, req.(*MyVotesQuery))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Vote_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "g_vote.Vote",
 	HandlerType: (*VoteServer)(nil),
@@ -774,6 +1001,10 @@ var _Vote_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SelectVote",
 			Handler:    _Vote_SelectVote_Handler,
+		},
+		{
+			MethodName: "MyVotes",
+			Handler:    _Vote_MyVotes_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

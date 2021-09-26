@@ -45,9 +45,17 @@ func main() {
 	// log.Println(r)
 
 	// 투표 테스트
-	r, err := c.SelectVote(mdCtx, &pb.SelectQuery{BoardId: 3242212, VoteId: "6082226899", VoteItemId: 2})
-	log.Println(r)
+	// r, err := c.SelectVote(mdCtx, &pb.SelectQuery{BoardId: 3242212, VoteId: "6082226899", VoteItemId: 2})
+	// log.Println(r)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	// 나의 작성 투표 목록 테스트
+	r, err := c.MyVotes(mdCtx, &pb.MyVotesQuery{})
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Println(r)
+
 }
