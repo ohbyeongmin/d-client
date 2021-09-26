@@ -26,6 +26,7 @@ func main() {
 	)
 	mdCtx := metadata.NewOutgoingContext(context.Background(), md)
 
+	// Create 테스트
 	// boardId := uint64(1111111)
 	// title := "grpc"
 	// description := "Grpc"
@@ -36,12 +37,14 @@ func main() {
 	// }
 	// log.Println(r)
 
+	// 조회 테스트
 	// r, err := c.SearchVote(mdCtx, &pb.SearchQuery{BoardId: 123456, VoteId: "6082226703"})
 	// if err != nil {
 	// 	log.Fatal(err)
 	// }
 	// log.Println(r)
 
+	// 투표 테스트
 	r, err := c.SelectVote(mdCtx, &pb.SelectQuery{BoardId: 3242212, VoteId: "6082226899", VoteItemId: 2})
 	log.Println(r)
 	if err != nil {
